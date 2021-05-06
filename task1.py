@@ -130,10 +130,11 @@ fig.update_layout(
 #sunburst vala graph
 fig2 = px.sunburst(df, path=['Region','Category','Segment'], values='Sales', color='Region',color_discrete_sequence= px.colors.sequential.RdBu)
 fig2.update_layout(
+margin=dict(t=30,b=0,l=0,r=0),
     title={
-        'text' : 'Sales according to region'
+        'text' : 'Sales according to region'.upper()
     },
-    height=550,
+
 )
 
 
@@ -145,7 +146,7 @@ fig_bub = px.scatter(by_state1, x="quantity_jitter", y="Profit",size="Sales", co
                      color_discrete_sequence= px.colors.sequential.Turbo)
 fig_bub.update_layout(
 margin=dict(b=0,l=0,r=0),
-    title={ 
+    title={
         'text':"sales and profit chart according to state".upper()
     },
     xaxis={
@@ -221,6 +222,16 @@ index_of_smallest_value_in_result_l1 = result_l1.index(min(result_l1))
 
 
 app.layout = html.Div([
+
+
+    html.Br(),
+    dbc.Row([
+        dbc.Col([
+            dbc.Card([
+                dbc.CardHeader(html.H4("Exploratory Data Analysis on \"Superstore\" market in USA-states"))
+            ],style={'text-align':'center'})
+        ],width={'size':10,'offset':1}),
+    ]),
     html.Br(),
     dbc.Row([
         dbc.Col([
@@ -474,10 +485,10 @@ def update_bar1(btn,state_checkllist):
         if (trace.name in names) else names.add(trace.name))
 
     fig_1.update_layout(barmode="stack",
-                        margin=dict( b=0, l=0, r=0),
+                        margin=dict(b=0, l=0, r=0),
                         showlegend=True,
                         title={
-                            'text' : "comparison between Sales of each category per state".upper()
+                            'text' : "comparison between Sales of <br>each category per state".upper()
                         })
     fig_1.update_xaxes(tickangle=-90)
 
