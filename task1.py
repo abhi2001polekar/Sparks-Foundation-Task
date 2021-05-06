@@ -145,7 +145,7 @@ fig_bub = px.scatter(by_state1, x="quantity_jitter", y="Profit",size="Sales", co
                      color_discrete_sequence= px.colors.sequential.Turbo)
 fig_bub.update_layout(
 margin=dict(b=0,l=0,r=0),
-    title={
+    title={ 
         'text':"sales and profit chart according to state".upper()
     },
     xaxis={
