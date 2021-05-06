@@ -33,7 +33,7 @@ us_state_code = {     #mapping through dictionary
     'Louisiana': 'LA',
     'Maine': 'ME',
     'Maryland': 'MD',
-    'Massachusetts': 'MA',
+    'Massachusetts': 'MA', 
     'Michigan': 'MI',
     'Minnesota': 'MN',
     'Mississippi': 'MS',
